@@ -1,0 +1,269 @@
+.calculator {
+  margin-bottom: 80px;
+  color: var(--white);
+  background-color: var(--light-black);
+
+  &__wrapper {
+    padding: 100px 0;
+  }
+
+  &__main-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 1.3em;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto 0;
+      width: 60%;
+      height: 1px;
+      background-color: var(--dark-gray);
+    }
+  }
+
+  .calculator__title-container {
+    display: flex;
+
+    @media (max-width: 388px) {
+      flex-direction: column;
+    }
+  }
+
+  .calculator__input {
+    position: relative;
+    max-width: 635px;
+    height: 80px;
+    padding: 27px, 0px, 28px, 0px;
+    border: 1px solid var(--dark-gray);
+    background: var(--light-black);
+    outline: none;
+
+    &::placeholder {
+      text-align: center;
+    }
+  }
+
+  .calculator__price {
+    width: 635px;
+    height: 80px;
+    padding: 27px, 0px, 28px, 0px;
+    border: 1px solid var(--dark-gray);
+    background: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calculator__title_1 {
+    margin-bottom: 120px;
+  }
+
+  .calculator__stick {
+    width: 800px;
+    height: 1px;
+    background: var(--dark-gray);
+  }
+
+  .calculator__title {
+    width: 642px;
+    height: 90px;
+    padding: 23px, 186px, 23px, 186px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--dark-gray);
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    text-transform: lowercase;
+
+    &--active {
+      background: var(--dark-gray);
+    }
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 15px;
+    }
+
+    & h2 {
+      font-size: 32px;
+    }
+  }
+
+  .calculator__xz {
+    width: 310px;
+    height: 80px;
+    padding: 27px 0px 28px 0px;
+    background: var(--yellow);
+    color: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calculator__section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 90px;
+  }
+
+  .calculator__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border: 1px solid var(--dark-gray);
+    color: white;
+
+    @media (max-width: 670px) {
+      width: 100%;
+    }
+  }
+
+  button {
+    background-color: var(--yellow);
+    color: #333;
+    border: none;
+    padding: 10px;
+    // border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .calculator__result {
+    display: flex;
+    gap: 15px;
+  }
+
+  #calculate {
+    width: 100%;
+
+    &:hover {
+      background-color: #ffcc00;
+    }
+
+    &:active {
+      background-color: #ff9900;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #width,
+  #length,
+  #height,
+  #quantity {
+    text-align: center;
+  }
+}
+
+@media (max-width:1200px) {
+  .calculator {
+
+    &__main-title {
+
+      &::after {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width:991px) {
+  .calculator {
+    margin-bottom: 60px;
+
+    .calculator__section {
+      grid-template-columns: repeat(1, 1fr);
+
+      & div {
+        width: 100%;
+      }
+    }
+
+    .calculator__input {
+      max-width: 100%;
+      margin-bottom: 0;
+
+      &::placeholder {
+        text-align: center;
+      }
+    }
+
+    .calculator__title {
+      & h2 {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .calculator {
+    &__main-title {
+      font-size: 36px;
+    }
+
+    .calculator__section {
+      margin-top: 40px;
+    }
+
+    .calculator__title_1 {
+      padding: 0;
+      margin-bottom: 50px;
+    }
+
+    .calculator__title {
+      & h2 {
+        font-size: 20px;
+      }
+    }
+
+    .calculator__result {
+      gap: 5px;
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .calculator {
+    margin-bottom: 0;
+
+    &__wrapper {
+      padding: 50px 0;
+    }
+
+    &__main-title {
+      font-size: 26px;
+
+      &::after {
+        width: 35%;
+      }
+    }
+
+    .calculator__section {
+      gap: 5px;
+    }
+
+    .calculator__input {
+      height: 60px;
+    }
+
+    .calculator__title {
+      height: 70px;
+    }
+
+    .calculator__xz {
+      height: 60px;
+    }
+  }
+}

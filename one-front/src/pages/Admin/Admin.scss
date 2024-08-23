@@ -1,0 +1,261 @@
+.admin {
+  padding: 100px 0;
+
+  &__title {
+    font-family: var(--second-rokkitt);
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto 0;
+      width: 30%;
+      height: 1px;
+      background-color: var(--light-gray);
+      z-index: -1;
+    }
+  }
+
+  .gallery {
+    margin-bottom: 120px;
+
+    &__top {
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 100px;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1.3em;
+      text-transform: lowercase;
+      color: var(--dark-gray);
+    }
+
+    &__inputs-wrapper {
+      gap: 5px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__download {
+      border: 1px solid var(--light-black);
+      padding: 20px 50px;
+      width: 100%;
+      max-width: 375px;
+      outline: none;
+    }
+
+    &__list {
+      gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    &__items {
+      gap: 15px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &__img-wrapper {
+      width: 180px;
+      height: 180px;
+      overflow: hidden;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__delete {
+      cursor: pointer;
+    }
+
+    &__save {
+      color: var(--light-black);
+      background-color: var(--yellow);
+      padding: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.3em;
+      width: 100%;
+      max-width: 350px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:active {
+        opacity: .8;
+      }
+    }
+  }
+
+  .files {
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+
+    &__items {
+      padding: 25px 15px;
+      height: 470px;
+      border: 1px solid var(--light-gray);
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__input-wrapper {
+      gap: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 1.3em;
+    }
+
+    &__input {
+      border: 1px solid var(--light-black);
+      padding: 20px 50px;
+      width: 100%;
+      max-width: 375px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    &__label {
+      font-size: 18px;
+      line-height: 1.3em;
+      color: var(--dark-gray);
+    }
+
+    &__btn {
+      color: var(--light-black);
+      background-color: var(--white);
+      border: 1px solid var(--light-black);
+      padding: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.3em;
+      width: 100%;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:active {
+        opacity: .8;
+      }
+
+      &--black {
+        color: var(--white);
+        border: 1px solid transparent;
+        background-color: var(--light-black);
+      }
+
+      &--yellow {
+        border: 1px solid transparent;
+        background-color: var(--yellow);
+      }
+    }
+  }
+}
+
+@media (max-width:991px) {
+  .admin {
+    &__title {
+      font-size: 36px;
+    }
+
+    .gallery {
+      margin-bottom: 80px;
+    }
+
+    .files {
+      &__items {
+        height: 400px;
+      }
+
+      &__input {
+        padding: 10px;
+      }
+
+      &__btn {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .admin {
+    padding: 50px 0;
+
+    &__title {
+      font-size: 26px;
+      margin-bottom: 30px;
+
+      &::after {
+        width: 15%;
+      }
+    }
+
+    .gallery {
+      margin-bottom: 60px;
+
+      &__top {
+        margin-bottom: 60px;
+      }
+
+      &__title {
+        font-size: 22px;
+      }
+
+      &__download {
+        padding: 10px 25px;
+        max-width: 200px;
+      }
+
+      &__list {
+        justify-content: center;
+      }
+    }
+
+    .files {
+      &__items {
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .admin {
+    &__title {
+      font-size: 20px;
+    }
+
+    .gallery {
+      &__title {
+        font-size: 18px;
+      }
+    }
+  }
+}

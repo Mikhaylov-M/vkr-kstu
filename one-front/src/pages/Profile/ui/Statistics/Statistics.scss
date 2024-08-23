@@ -1,0 +1,281 @@
+.statistics {
+  padding: 120px 0 100px;
+
+  &__top {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.3em;
+    text-transform: lowercase;
+    color: var(--light-black);
+  }
+
+  .accordion {
+    position: relative;
+    width: 100%;
+    max-width: 555px;
+
+    &__title {
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      padding: 17px 67px;
+      background-color: var(--yellow);
+      color: var(--dark-gray);
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1.3em;
+      text-transform: lowercase;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 32px;
+        right: 65px;
+        width: 18px;
+        height: 18px;
+        background: url("../../../../global/images/accordion-arrow.svg") no-repeat center/cover;
+        transform: rotate(180deg);
+        transition: all .3s;
+      }
+
+      &.active {
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &__list {
+      border: 1px solid var(--yellow);
+    }
+
+    &__items {
+      padding: 15px 67px;
+      text-align: center;
+      background-color: var(--white);
+      cursor: pointer;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--yellow);
+      }
+    }
+
+    &__text {
+      font-weight: 500;
+      font-size: 34px;
+      text-transform: lowercase;
+      color: var(--light-black);
+    }
+
+    &__list {
+      position: absolute;
+      top: 77px;
+      right: 0;
+      width: 100%;
+      height: 170px;
+      overflow-y: auto;
+      height: 0;
+      transition: all .3s;
+
+      &.active {
+        height: 170px;
+      }
+    }
+
+    &__items {
+      transition: all .3s;
+
+      &:hover {
+        background: #f9f9f9;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__items {
+    padding: 20px;
+    border: 1px solid var(--light-gray);
+    width: 321px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__naming {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.3em;
+    text-transform: lowercase;
+    color: var(--dark-gray);
+  }
+
+  &__weight {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.3em;
+    letter-spacing: 0.03em;
+    color: var(--light-black);
+
+    &--som {
+      color: var(--yellow);
+    }
+
+    &--level {
+      display: flex;
+      align-items: flex-end;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 120%;
+      color: var(--light-black);
+    }
+  }
+
+  &__inner {
+    gap: 5px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__status-text {
+    font-size: 28px;
+    line-height: 1.3em;
+  }
+
+  &__status-img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width:991px) {
+  .statistics {
+    &__title {
+      font-size: 25px;
+    }
+
+    &__list {
+      justify-content: center;
+    }
+
+    .accordion {
+      &__title {
+        font-size: 22px;
+
+        &::after {
+          top: 26px;
+        }
+      }
+
+      &__text {
+        font-size: 22px;
+      }
+
+      &__list {
+        top: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .statistics {
+    padding: 60px 0;
+
+    &__top {
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+
+    &__items {
+      width: 170px;
+      height: 150px;
+    }
+
+    &__naming {
+      font-size: 16px;
+    }
+
+    &__weight {
+      font-size: 28px;
+    }
+
+    .accordion {
+      &__title {
+        font-size: 18px;
+
+        &::after {
+          top: 17px;
+          right: 45px;
+        }
+      }
+
+      &__list {
+        top: 55px;
+      }
+
+      &__text {
+        font-size: 18px;
+      }
+    }
+
+    &__status-img {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__status-text {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .statistics {
+
+    &__top {
+      align-items: flex-start;
+    }
+
+    .accordion {
+      width: 80%;
+
+      &__title {
+        text-align: left;
+        padding: 17px;
+
+        &::after {
+          top: 22px;
+          right: 21px;
+        }
+      }
+
+      &__list {
+        top: 56px;
+      }
+
+      &__text {
+        font-size: 17px;
+      }
+    }
+  }
+}

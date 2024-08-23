@@ -1,0 +1,39 @@
+.map {
+  position: relative;
+
+  .leaflet-control-zoom {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .leaflet-container {
+    height: 300px;
+  }
+
+  .leaflet-control-zoom-out,
+  .leaflet-control-zoom-in {
+    border-radius: 0 !important;
+  }
+
+  .leaflet-control-zoom-in {
+    margin-right: 1px;
+  }
+}
+
+@media (max-width:991px) {
+  .map {
+
+    .leaflet-container {
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .map {
+
+    .leaflet-container {
+      height: 170px !important;
+    }
+  }
+}

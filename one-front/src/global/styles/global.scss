@@ -1,0 +1,135 @@
+:root {
+  --light-black: #282b26;
+  --yellow: #f5d100;
+  --light-gray: #ececec;
+  --dark-gray: #686a67;
+  --white: #fff;
+  --error-color: #ec5050;
+  --font-noto-sans: "Noto Sans", sans-serif;
+  --second-rokkitt: "Rokkitt", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none;
+}
+
+#root {
+  justify-content: space-between;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  #root {
+    overflow: clip;
+  }
+}
+
+body {
+  font-family: var(--font-noto-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3em;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=__container] {
+  max-width: 82.188rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+.def__title {
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 1.3em;
+  color: var(--light-black);
+  text-align: center;
+}
+
+.def__input {
+  border: 1px solid var(--dark-gray);
+  padding: 23px 25px;
+  height: 73px;
+  width: 100%;
+  max-width: 630px;
+  outline: none;
+  &-invalid {
+    border: 1px solid var(--error-color);
+  }
+}
+
+.def__btn {
+  background: var(--yellow);
+  color: var(--light-black);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  padding: 22px;
+  width: 100%;
+  max-width: 630px;
+  border: 1px solid transparent;
+  transition: all .3s;
+
+  &:hover {
+    border: 1px solid var(--yellow);
+    background-color: var(--white);
+  }
+}
+
+.invalid-feedback {
+  color: var(--error-color);
+}
+
+@media (max-width:768px) {
+
+  .def__title {
+    font-size: 36px;
+  }
+
+  .def__input {
+    height: 50px;
+    width: 100%;
+    max-width: 630px;
+    padding: 23px 10px;
+    &::placeholder {
+      font-size: 13px;
+    }
+  }
+
+  .def__btn {
+    padding: 10px;
+    height: 50px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width:500px) {
+  .def__title {
+    font-size: 26px;
+  }
+}
